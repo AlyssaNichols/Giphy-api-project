@@ -26,17 +26,23 @@ function App() {
   };
 
   // Check if random and its properties exist before rendering
-  if (!random || !random.data || !random.data.images || !random.data.images.original || !random.data.images.original.url) {
-    return (
-      <div>
-        <header className="App-header">
-          <h1>Random Giphy API</h1>
-          <button onClick={getRandomGif}>Refresh</button>
-        </header>
-        <p>Loading...</p>
-      </div>
-    );
-  }
+  // if (
+  //   !random ||
+  //   !random.data ||
+  //   !random.data.images ||
+  //   !random.data.images.original ||
+  //   !random.data.images.original.url
+  // ) {
+  //   return (
+  //     <div>
+  //       <header className="App-header">
+  //         <h1>Random Giphy API</h1>
+  //         <button onClick={getRandomGif}>Refresh</button>
+  //       </header>
+  //       <p>Loading...</p>
+  //     </div>
+  //   );
+  // } this is the same thing as line 53 essentially
 
   return (
     <div>
@@ -44,9 +50,10 @@ function App() {
         <h1>Random Giphy API</h1>
         <button onClick={getRandomGif}>Refresh</button>
       </header>
-      <img src={random.data.images.original.url} alt="Random Gif" />
+      {random.data !== undefined && (
+        <img src={random.data.images.original.url} alt="Random Gif" />
+      )}
       <br />
-     
     </div>
   );
 }
