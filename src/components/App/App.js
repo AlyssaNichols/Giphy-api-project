@@ -1,8 +1,22 @@
 import React from 'react';
+import axios from "axios";
 import './App.css';
 
 function App() {
   // Renders the entire app on the DOM
+  axios({
+    method: "GET",
+    url: "/random/",
+  })
+    .then((response) => {
+      console.log(response.data);
+      dispatch({ type: "SET_RANDOM", payload: response.data });
+    })
+    .catch((error) => {
+      console.log("error on GET", error);
+    });
+
+
   return (
     <div>
       <header className="App-header">
