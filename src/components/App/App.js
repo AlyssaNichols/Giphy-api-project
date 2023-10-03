@@ -14,7 +14,7 @@ function App() {
   const getRandomGif = () => {
     axios({
       method: "GET",
-      url: "/random/",
+      url: "/random/limit",
     })
       .then((response) => {
         console.log(response.data);
@@ -53,6 +53,8 @@ function App() {
       {random.data !== undefined && (
         <img src={random.data.images.original.url} alt="Random Gif" />
       )}
+      {random.data !== undefined && <p>Title: {random.data.title}</p>}
+      {random.data !== undefined && <p>Rating: {random.data.rating}</p>}
       <br />
     </div>
   );
