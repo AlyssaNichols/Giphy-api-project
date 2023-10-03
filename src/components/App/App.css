@@ -1,12 +1,16 @@
 .App {
   text-align: center;
 }
+body{
+  background-color: rgb(161, 161, 161);
+}
 
 .App-header {
-  background-color: #222;
+  background-color: #232323;
   height: 120px;
   padding: 20px;
   color: white;
+  text-align: center;
 }
 
 .App-title {
@@ -20,4 +24,34 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+button{
+    background-color: rgb(116, 233, 244);
+    border: 1px solid black;
+    border-radius: 3px;
+    height: 40px;
+    width: 20%;
+    font-size: 20px;
+  }
+  
+Button:hover {
+    background-color: rgb(255, 111, 229);
+  }
+Button:active {
+    transform: scale(0.93);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  }
+
+img{
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
+  max-height: auto;
+
 }
